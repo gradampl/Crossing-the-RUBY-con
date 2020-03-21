@@ -47,8 +47,12 @@ end
 
 def listFilms(param)
   films = param
-  films.each do |k, v|
-    puts "#{k}: #{v}"
+  if films == {}
+    puts'Lista jest pusta.'
+  else
+    films.each do |k, v|
+      puts "#{k}: #{v}"
+    end
   end
 end
 
@@ -100,6 +104,7 @@ shouldContinue = true
 until !shouldContinue
 
   choice = startProgram
+
   case choice
 
   when 'a'
@@ -120,8 +125,10 @@ until !shouldContinue
 
   when 'e'
     shouldContinue = false
+
   else
   puts 'Nie rozumiem, co mam zrobić.'
   end
+
 end
 
